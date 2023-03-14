@@ -994,6 +994,7 @@ def water_apps(request):
             'courts': WaterCourt.objects.filter().count(),
             'readings': WaterMeterReadings.objects.filter().count(),
             'outbox': WaterMeterReadings.objects.filter().count(),
+            'tobe_collected': WaterClientAll.objects.filter().aggregate(total=Sum('amount_due'))['total'] or 0,
             'unallocated_payments': MiwamaMpesa.objects.filter(processed=2).count(),
             'unallocated_amount': int(MiwamaMpesa.objects.filter().aggregate(total=Sum('amount'))['total'] or 0),
             'admins': CustomerSubAccounts.objects.filter(owner=customer.id).count() + 1

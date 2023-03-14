@@ -45,7 +45,7 @@
                     {% for network in networks %}
                     <tr>
 
-                        <td><a href="{% url 'sms:sample_datatable_network' network.id%}">{{ network.name }}</a></td>
+                        <td><a href="{% url 'sms:water_clients_court' network.id%}">{{ network.name }}</a></td>
 
                         <td>{{ network.created_at|date:"Y-m-d" }}</td>
                         <td>{{ network.updated_at|date:"Y-m-d" }}</td>

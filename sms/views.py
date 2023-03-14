@@ -1739,9 +1739,9 @@ def water_clients(request):
     }
     return render(request, 'sms/water_clients.html', context)
 def water_clients_court(request,court_id):
-    court = WaterCourt.objects.filter(id=court_id).first()
+    court = WaterNetwork.objects.filter(id=court_id).first()
     court_name = court.name
-    clients = WaterClientAll.objects.filter(court=court_name).order_by('-id').values()
+    clients = WaterClientAll.objects.filter(network=court_name).order_by('-id').values()
     context = {
         'clients': clients
     }

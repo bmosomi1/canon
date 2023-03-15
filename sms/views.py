@@ -3378,7 +3378,7 @@ def water_payments_allocations(request):
         return redirect('sms:water_payments_allocations')
     else:
         context = {
-            'payments': MiwamaMpesa.objects.filter(processed=2).order_by('-id'),
+            'payments': MiwamaMpesa.objects.filter(processed=3).order_by('-id'),
             'payments_allocated': WaterPaymentReallocate.objects.filter().order_by('-id'),
             'clients': WaterClientAll.objects.filter().order_by('names')
         }

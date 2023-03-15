@@ -995,8 +995,8 @@ def water_apps(request):
             'readings': WaterMeterReadings.objects.filter().count(),
             'outbox': WaterMeterReadings.objects.filter().count(),
             'tobe_collected': WaterClientAll.objects.filter().aggregate(total=Sum('amount_due'))['total'] or 0,
-            'unallocated_payments': MiwamaMpesa.objects.filter(processed=2).count(),
-            'unallocated_amount': int(MiwamaMpesa.objects.filter().aggregate(total=Sum('amount'))['total'] or 0),
+            'unallocated_payments': MiwamaMpesa.objects.filter(processed=3).count(),
+            'unallocated_amount': int(MiwamaMpesa.objects.filter(processed=3).aggregate(total=Sum('amount'))['total'] or 0),
             'admins': CustomerSubAccounts.objects.filter(owner=customer.id).count() + 1
         }
         return render(request, 'sms/water_apps.html', context)

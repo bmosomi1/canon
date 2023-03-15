@@ -24,7 +24,7 @@
                     <select name="trans_id" class="form-control" id="transaction" style="width:300px" required>
                         <option value="">Select mpesa transaction</option>
                         {% for client in payments %}
-                            <option value="{{ client.id }}">{{ client.trans_id }} {{ client.amount }} {{ client.names }} {{ client.id }} {{ client.sender_phone }}</option>
+                            <option value="{{ client.id }}">{{ client.trans_id }} {{ client.amount }} {{ client.names }} {{ client.sender_phone }}</option>
                         {% endfor %}
                     </select>
 

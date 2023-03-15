@@ -3354,7 +3354,7 @@ def water_payments_allocations(request):
         confirmation_code = transaction.trans_id
         amount=transaction.amount
 
-        transaction.processed = 3
+        transaction.processed = 5
         transaction.allocated_to=names
         transaction.account_number = account_number
         transaction.save()

@@ -3350,7 +3350,6 @@ def water_payments_allocations(request):
         account_number = customer.id
         phone_number=transaction.sender_phone
         paid_by=transaction.names
-        provided_account=transaction.account_number
         confirmation_code = transaction.trans_id
         amount=transaction.amount
 
@@ -3366,7 +3365,7 @@ def water_payments_allocations(request):
             received_from=paid_by,
             amount=amount,
             confirmation_code=confirmation_code,
-            account_number=provided_account,
+            account_number=account_number,
             account_name=names,
             ref_id=trans_id,
             comments=comments,

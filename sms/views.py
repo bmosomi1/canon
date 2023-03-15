@@ -991,7 +991,7 @@ def water_apps(request):
             'contacts': Contact.objects.filter(group__customer_id=customer.id).count(),
             'water_clients': WaterClientAll.objects.filter().count(),
             'groups': Group.objects.filter(customer_id=customer.id).count(),
-            'courts': WaterCourt.objects.filter().count(),
+            'courts': WaterNetwork.objects.filter().count(),
             'readings': WaterMeterReadings.objects.filter().count(),
             'outbox': WaterMeterReadings.objects.filter().count(),
             'tobe_collected': WaterClientAll.objects.filter().aggregate(total=Sum('amount_due'))['total'] or 0,
